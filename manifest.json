@@ -1,0 +1,22 @@
+{
+  "name": "Productive-Medium",
+  "description": "Removes the parts of medium that distract you from writing.  Opinionated and effective.",
+  "icons": {},
+  "version": "0.1",
+  "permissions": [
+      "tabs", "http://*.medium.com/*", "https://*.medium.com/*"
+  ],
+  "browser_action": {
+      "default_title": "Removes distracting medium feeds",
+      "default_icon": "icon.png"
+  },
+  "content_scripts": [{
+	"css": ["style.css"],
+	"js": ["main.js"],
+	"matches": ["*://www.medium.com/", "*://www.medium.com/*"],
+	"all_frames": true,
+	"run_at": "document_start"
+  }],
+
+  "manifest_version": 2
+}
